@@ -193,10 +193,12 @@ body {
   font-size: 20px;
   line-height: 32px;
   align-content: center;
+  cursor: not-allowed;
   }
 
   #login.active {
     background-color: #3692FF;
+    cursor: pointer;
   }
 
   /* 간편 로그인하기*/

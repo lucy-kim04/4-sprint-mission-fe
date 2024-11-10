@@ -26,6 +26,8 @@ function validateEmail() {
     emailErrorDiv.textContent = ''; 
     emailErrorDiv.style.display = 'none'; 
   }
+
+  activeLoginButton();
 }
 
 
@@ -46,7 +48,25 @@ function validatePassword() {
     pwErrorDiv.textContent = ''; 
     pwErrorDiv.style.display = 'none'; 
   }
+
+  activeLoginButton();
 }
+
+
+function activeLoginButton() {
+  const emailValid = emailErrorDiv.style.display === 'none';
+  const passwordValid = pwErrorDiv.style.display === 'none';
+
+  if (emailValid && passwordValid) {
+    loginButton.disabled = false;
+    loginButton.classList.add('active');
+  } else {
+    loginButton.disabled = true;
+    loginButton.classList.remove('active')
+  }
+
+}
+
 
 emailInput.addEventListener('focusout', validateEmail);
 pwInput.addEventListener('focusout', validatePassword);
