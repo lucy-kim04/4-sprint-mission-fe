@@ -53,6 +53,8 @@ function validatePassword() {
 }
 
 
+
+
 function activeSignupButton() {
   const emailValid = emailErrorDiv.style.display === 'none';
   const passwordValid = pwErrorDiv.style.display === 'none';
