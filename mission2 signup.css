@@ -73,6 +73,7 @@ body {
   color: #1F2937;
   margin: 0;
   align-self: flex-start;
+  flex-direction: column;
 }
 
 .email-in {
@@ -84,6 +85,7 @@ body {
   width: 640px;
   height: 56px;
   box-sizing: border-box;
+  border: 1px solid transparent;
 }
 
 .email-in input[type="email"] {
@@ -100,6 +102,19 @@ body {
 
 .email-in:focus-within {
   border: 1px solid #3692FF;
+}
+
+.emailError {
+  width: 154px;
+  height: 18px;
+  top: 64px;
+  left: 16px;
+  font-family: 'Pretendard';
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 17.9px;
+  color: #F74747;
+  display: none;
 }
 
 
@@ -196,6 +211,19 @@ body {
 
 .password-in:focus-within {
   border: 1px solid #3692FF;
+}
+
+.pwError {
+  position: relative;
+  width: 154px;
+  height: 18px;
+  top: 64px;
+  font-family: 'Pretendard';
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 17.9px;
+  color: #F74747;
+  display: none;
 }
 
 /* 비밀번호 입력 확인*/

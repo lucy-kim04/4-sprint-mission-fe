@@ -1,6 +1,6 @@
 const emailInput = document.getElementById('email');
 const pwInput = document.getElementById('password');
-const loginButton = document.getElementById('login');
+const signupButton = document.getElementById('signup');
 const emailErrorDiv = document.querySelector('.emailError');
 const pwErrorDiv = document.querySelector('.pwError');
 const emailContainer = document.querySelector('.email-in');
@@ -58,11 +58,11 @@ function activeLoginButton() {
   const passwordValid = pwErrorDiv.style.display === 'none';
 
   if (emailValid && passwordValid) {
-    loginButton.disabled = false;
-    loginButton.classList.add('active');
+    signupButton.disabled = false;
+    signupButton.classList.add('active');
   } else {
-    loginButton.disabled = true;
-    loginButton.classList.remove('active')
+    signupButton.disabled = true;
+    signupButton.classList.remove('active')
   }
 
 }
