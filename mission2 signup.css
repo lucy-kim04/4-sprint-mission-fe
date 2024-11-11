@@ -172,7 +172,7 @@ body {
   display: flex;
   flex-direction: column;
   width: 640px;
-  height: 98px;
+  height: 119px;
   gap: 16px;
 }
 
@@ -215,13 +215,14 @@ body {
 
 .pwError {
   height: 18px;
-  top: 80px;
+  left: 16px;
   font-family: 'Pretendard';
   font-weight: 600;
   font-size: 15px;
   line-height: 17.9px;
   color: #F74747;
   display: none;
+  position: relative;
 }
 
 /* 비밀번호 입력 확인*/
@@ -230,7 +231,7 @@ body {
   display: flex;
   flex-direction: column;
   width: 640px;
-  height: 98px;
+  height: 119px;
   gap: 16px;
 }
 
@@ -271,6 +272,17 @@ body {
   border: 1px solid #3692FF;
 }
 
+.repwError {
+  height: 18px;
+  left: 16px;
+  font-family: 'Pretendard';
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 17.9px;
+  color: #F74747;
+  display: none;
+  position: relative;
+}
 
 /*회원가입 버튼*/
 #signup {

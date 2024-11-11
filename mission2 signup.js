@@ -5,7 +5,9 @@ const emailErrorDiv = document.querySelector('.emailError');
 const pwErrorDiv = document.querySelector('.pwError');
 const emailContainer = document.querySelector('.email-in');
 const pwContainer = document.querySelector('.password-in')
-
+const checkPassword = document.querySelector('.repassword-in');
+const checkPasswordInput = document.getElementById('password_re');
+const checkPasswordErrorDiv = document.querySelector('.repwError');
 
 
 // 이메일
@@ -52,14 +54,31 @@ function validatePassword() {
   activeSignupButton();
 }
 
+// 비밀번호 확인
+function validateCheckPassword() {
+  const pwValue = pwInput.value;
+  const checkPwValue = checkPasswordInput.value;
 
+  if (checkPwValue && pwValue !== checkPwValue) {
+    checkPassword.style.border = '1px solid red';
+    checkPasswordErrorDiv.textContent = '비밀번호가 일치하지 않습니다';
+    checkPasswordErrorDiv.style.display = 'block';
+  } else {
+    checkPassword.style.border = '1px solid transparent';
+    checkPasswordErrorDiv.textContent = '';
+    checkPasswordErrorDiv.style.display = 'none';
+  }
+
+  activeSignupButton();
+}
 
 
 function activeSignupButton() {
   const emailValid = emailErrorDiv.style.display === 'none';
   const passwordValid = pwErrorDiv.style.display === 'none';
+  const checkPasswordValid = checkPasswordErrorDiv.style.display === 'none';
 
-  if (emailValid && passwordValid) {
+  if (emailValid && passwordValid && checkPasswordValid) {
     signupButton.disabled = false;
     signupButton.classList.add('active');
   } else {
@@ -72,3 +91,4 @@ function activeSignupButton() {
 
 emailInput.addEventListener('focusout', validateEmail);
 pwInput.addEventListener('focusout', validatePassword);
+checkPasswordInput.addEventListener('focusout', validateCheckPassword);
