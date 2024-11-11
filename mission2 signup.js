@@ -27,7 +27,7 @@ function validateEmail() {
     emailErrorDiv.style.display = 'none'; 
   }
 
-  activeLoginButton();
+  activeSignupButton();
 }
 
 
@@ -49,11 +49,11 @@ function validatePassword() {
     pwErrorDiv.style.display = 'none'; 
   }
 
-  activeLoginButton();
+  activeSignupButton();
 }
 
 
-function activeLoginButton() {
+function activeSignupButton() {
   const emailValid = emailErrorDiv.style.display === 'none';
   const passwordValid = pwErrorDiv.style.display === 'none';
 

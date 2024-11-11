@@ -114,7 +114,7 @@ body {
   font-size: 15px;
   line-height: 17.9px;
   color: #F74747;
-  display: none;
+  display:none;
 }
 
 
@@ -214,10 +214,8 @@ body {
 }
 
 .pwError {
-  position: relative;
-  width: 154px;
   height: 18px;
-  top: 64px;
+  top: 80px;
   font-family: 'Pretendard';
   font-weight: 600;
   font-size: 15px;
