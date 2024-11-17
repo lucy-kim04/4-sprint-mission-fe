@@ -4,7 +4,8 @@ const loginButton = document.getElementById('login');
 const emailErrorDiv = document.querySelector('.emailError');
 const pwErrorDiv = document.querySelector('.pwError');
 const emailContainer = document.querySelector('.email-in');
-const pwContainer = document.querySelector('.password-in')
+const pwContainer = document.querySelector('.password-in');
+
 
 
 
@@ -54,8 +55,8 @@ function validatePassword() {
 
 
 function activeLoginButton() {
-  const emailValid = emailErrorDiv.style.display === 'none';
-  const passwordValid = pwErrorDiv.style.display === 'none';
+  const emailValid = emailErrorDiv.textContent === '';
+  const passwordValid = pwErrorDiv.textContent === '';
 
   if (emailValid && passwordValid) {
     loginButton.disabled = false;
@@ -73,9 +74,6 @@ pwInput.addEventListener('focusout', validatePassword);
 
 
 
-
-
-
 const USER_DATA = [
   { email: 'codeit1@codeit.com', password: "codeit101!" },
     { email: 'codeit2@codeit.com', password: "codeit202!" },
@@ -84,3 +82,19 @@ const USER_DATA = [
     { email: 'codeit5@codeit.com', password: "codeit505!" },
     { email: 'codeit6@codeit.com', password: "codeit606!" },
 ]
+
+loginButton.addEventListener('click', function (event) {
+  event.preventDefault();
+
+  const emailValue = emailInput.value.trim();  
+  const pwValue = pwInput.value.trim();
+
+  const user = USER_DATA.find(user => user.email === emailValue);
+
+
+  if (!user || user.password !== pwValue) {
+    alert('비밀번호가 일치하지 않습니다.');
+  } else {
+    window.location.href = '/items'; 
+  }
+});
